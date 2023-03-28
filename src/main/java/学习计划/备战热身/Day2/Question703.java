@@ -21,7 +21,7 @@ public class Question703 {
     int k;
     int[] arr;
 
-    public KthLargest(int k, int[] nums) {
+    public Question703(int k, int[] nums) {
         this.k = k ;
         int len = nums.length ;
         Arrays.sort(nums);
