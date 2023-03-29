@@ -5,9 +5,9 @@ import 数据结构模型.ListNode;
 /**
  * 21. 合并两个有序链表
  *
+ * 排除双链表为空和单链表为空的情况，双链表排序会出现某一链表提前走完，后续链表直接拼接上即可。
  * @author RedCrazyGhost - wenxingzhan
  * @date 2023/01/08 18:11
- * @思考 排除双链表为空和单链表为空的情况，双链表排序会出现某一链表提前走完，后续链表直接拼接上即可。
  **/
 public class Question21 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {

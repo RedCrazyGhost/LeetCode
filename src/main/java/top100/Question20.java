@@ -4,10 +4,9 @@ import java.util.Stack;
 
 /**
  * 20. 有效的括号
- *
+ * 使用Stack先进后出的特点，可以完成对括号匹配顺序的检测。
  * @author RedCrazyGhost - wenxingzhan
  * @date 2023/01/08 17:27
- * @思考 使用Stack先进后出的特点，可以完成对括号匹配顺序的检测。
  **/
 public class Question20 {
     public boolean isValid(String s) {
