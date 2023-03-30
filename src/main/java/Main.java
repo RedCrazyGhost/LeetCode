@@ -3,6 +3,8 @@ import top100.Question21;
 import top100.Question70;
 import 学习计划.LeetCode75.Day2.Question205;
 import 学习计划.LeetCode75.Day2.Question392;
+import 学习计划.LeetCode75.Day4.Question142;
+import 学习计划.LeetCode75.Day4.Question876;
 import 数据结构模型.ListNode;
 import 每日一题.*;
 
@@ -14,7 +16,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        RunMethod(Question392.class);
+
     }
 
     public static void RunMethod(Class<?> clz, Object... args) {
@@ -77,12 +79,19 @@ public class Main {
             result=method.invoke(object, args);
             END_TIME = System.currentTimeMillis();
 
+
+
             if (result==null){
                 System.out.println(clz.getName()+ ":" + method.getName() + ":null");
             }else if (result.getClass().isArray()) {
                 System.out.println(clz.getName()+ ":" + method.getName() + ":" + Arrays.toString((int[]) result));
             }else {
-                System.out.println(clz.getName() + ":" + method.getName() + ":" + result);
+                if (method.getReturnType().equals(ListNode.class)) {
+                    ListNode node = (ListNode) result;
+                    System.out.println(clz.getName() + ":" + method.getName() + ":" + node.toValueString());
+                } else {
+                    System.out.println(clz.getName() + ":" + method.getName() + ":" + result);
+                }
             }
 
             System.out.println(getMicrosecond(START_TIME,END_TIME));
