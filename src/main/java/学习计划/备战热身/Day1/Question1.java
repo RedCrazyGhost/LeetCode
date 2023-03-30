@@ -7,7 +7,7 @@ import java.util.Map;
  * 1. 两数之和
  *
  * @author RedCrazyGhost - wenxingzhan
- * @date 2023/3/29 15:13
+ * @date 2023/3/29 15:28
  **/
 public class Question1 {
 //    public int[] twoSum(int[] nums, int target) {

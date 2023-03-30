@@ -7,7 +7,7 @@ import 数据结构模型.ListNode;
  * 206. 反转链表
  *
  * @author RedCrazyGhost - wenxingzhan
- * @date 2023/3/29 15:14
+ * @date 2023/3/29 15:28
  **/
 public class Question206 {
 

@@ -6,7 +6,7 @@ import java.util.IllegalFormatCodePointException;
  * 50. Pow(x, n)
  *
  * @author RedCrazyGhost - wenxingzhan
- * @date 2023/3/29 15:15
+ * @date 2023/3/29 15:28
  **/
 public class Question50 {
     // 调包侠
