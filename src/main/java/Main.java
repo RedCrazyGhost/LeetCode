@@ -1,3 +1,4 @@
+import 学习计划.LeetCode75.Day7.Question278;
 import 数据结构模型.ListNode;
 
 import java.lang.reflect.InvocationTargetException;
@@ -8,6 +9,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        RunMethod(Question278.class,5);
+
     }
 
     public static void RunMethod(Class<?> clz, Object... args) {
