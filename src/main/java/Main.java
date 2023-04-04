@@ -1,92 +1,39 @@
-import 学习计划.LeetCode75.Day7.Question278;
+import 学习计划.LeetCode75.Day9.Question733;
 import 数据结构模型.ListNode;
+import 每日一题.Question1;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.lang.reflect.Parameter;
 import java.util.Arrays;
-import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
-
-        RunMethod(Question278.class,5);
+        RunQuestion(Question733.class);
+        RunQuestion(Question1.class,new int[]{1,23,41,1},1);
 
     }
 
-    public static void RunMethod(Class<?> clz, Object... args) {
-
-        final String ARRAY_INT="[I";
-        final String ARRAY_DOUBLE_INT="[[I";
-        final String ARRAY_CHAR="[C";
-        final String ARRAY_LONG="[J";
-        final String ARRAY_BYTE="[B";
-        final String ARRAY_DOUBLE="[D";
-        final String ARRAY_STRING="[Ljava.lang.String;";
-        final String ARRAY_OBJECT="[Ljava.lang.Object;";
-        final String ARRAY_BOOLEAN="[Z";
-        final String ARRAY_FLOAT="[F";
-
-
-
-
+    public static void RunQuestion(Class<?> clz, Object... args) {
         long START_TIME,END_TIME;
-        Scanner scanner=new Scanner(System.in);
-        Method method = null;
-        if (clz.getDeclaredMethods().length==1){
-            method=clz.getDeclaredMethods()[0];
-        }else{
-
-            for(Method item:clz.getDeclaredMethods()){
-                if (item.getName().equals("TestCase")){
-                    method=item;
-                    break;
-                }
-            }
-
-            if (method==null) {
-                for (Method item : clz.getDeclaredMethods()) {
-                    System.out.print("当前方法: " + setColor(new StringBuilder(item.getName()), "yellow") + " 请输入[0/1]选择方法：");
-                    if (scanner.nextInt() == 1) {
-                        method = item;
-                        break;
-                    }
-                }
-            }
-        }
+        System.out.printf("Class来源: %s ",clz.getName());
+        Method method = getTargetMethod(clz);
         Object object, result;
+
         try {
             object = clz.getConstructor().newInstance();
             assert method != null:"没有找到目标方法！";
 
-            for (int i=0;i< method.getParameterCount();i++) {
-                switch (method.getParameterTypes()[i].getName()) {
-                    case ARRAY_STRING -> {
-                        args[i] = (Object) args[i];
-                        System.out.println("参数[" + (i + 1) + "]:" + Arrays.toString((String[]) args[i]));
-                    }
-                    case ARRAY_INT -> System.out.println("参数[" + (i + 1) + "]:" + Arrays.toString((int[]) args[i]));
-                    case ARRAY_DOUBLE_INT ->System.out.println("参数[" + (i + 1) + "]:" + Arrays.toString((int[][]) args[i]));
-                    default -> System.out.println("参数[" + (i + 1) + "]:" + args[i]);
-                }
-            }
+            parameterResolver(method,args);
+
             START_TIME = System.currentTimeMillis();
             result=method.invoke(object, args);
             END_TIME = System.currentTimeMillis();
 
-
-
-            if (result==null){
-                System.out.println(clz.getName()+ ":" + method.getName() + ":null");
-            }else if (result.getClass().isArray()) {
-                System.out.println(clz.getName()+ ":" + method.getName() + ":" + Arrays.toString((int[]) result));
-            }else {
-                if (method.getReturnType().equals(ListNode.class)) {
-                    ListNode node = (ListNode) result;
-                    System.out.println(clz.getName() + ":" + method.getName() + ":" + node.toValueString());
-                } else {
-                    System.out.println(clz.getName() + ":" + method.getName() + ":" + result);
-                }
+            if (!method.getName().equals("TestCase")) {
+                returnResolver(result);
             }
 
             System.out.println(getMicrosecond(START_TIME,END_TIME));
@@ -96,19 +43,100 @@ public class Main {
     }
 
 
-    public static String getMicrosecond(long START_TIME,long END_TIME) {
+    private static void parameterResolver(Method targetMethod,Object[] args){
+        Parameter[] parameters = targetMethod.getParameters();
+        int len= parameters.length;
+        String format="参数位置[%d] 类型: %s  值: %s\n";
+        for (int i = 0; i < len; i++) {
+            System.out.printf(format,i,parameters[i].getType().getTypeName(),resolver(args[i]));
+        }
+    }
+
+    private static void returnResolver(Object result){
+        String format="计算结果为: %s\n";
+        System.out.printf(format,resolver(result));
+    }
+
+    private static String resolver(Object obj){
+//        final String ARRAY_INT="[I";
+//        final String ARRAY_DOUBLE_INT="[[I";
+//        final String ARRAY_CHAR="[C";
+//        final String ARRAY_LONG="[J";
+//        final String ARRAY_BYTE="[B";
+//        final String ARRAY_DOUBLE="[D";
+//        final String ARRAY_STRING="[Ljava.lang.String;";
+//        final String ARRAY_OBJECT="[Ljava.lang.Object;";
+//        final String ARRAY_BOOLEAN="[Z";
+//        final String ARRAY_FLOAT="[F";
+//        final String LISTNODE="数据结构模型.ListNode";
+
+
+        StringBuilder stringBuilder=new StringBuilder();
+        if (obj!=null) {
+            switch (obj.getClass().getTypeName()) {
+                case "java.lang.String[]"->stringBuilder.append(Arrays.deepToString((String[]) obj));
+                case "java.lang.Object[]"->stringBuilder.append(Arrays.deepToString((Object[]) obj));
+                case "int[]"->stringBuilder.append(Arrays.toString((int[]) obj));
+                case "int[][]"->stringBuilder.append(Arrays.toString((int[][]) obj));
+                case "数据结构模型.ListNode" -> stringBuilder.append(((ListNode) obj).toValueString());
+                default -> stringBuilder.append(obj);
+            }
+        }else{
+            stringBuilder.append("NULL");
+        }
+        return stringBuilder.toString();
+    }
+
+    private static Method getTargetMethod(Class<?> clz){
+        String format="方法名称: %s(%s)\n";
+        StringBuilder stringBuilder=new StringBuilder();
+        Method targetMethod=null;
+        Method[] methods = clz.getDeclaredMethods();
+
+        boolean haveTestCase=false;
+        Method testCaseMethod=null;
+
+        for (Method method : methods) {
+           if (method.getModifiers()== Modifier.PUBLIC) {
+               if (method.getName().equals("TestCase")) {
+                   haveTestCase = true;
+                   testCaseMethod = method;
+               }else{
+                   targetMethod=method;
+               }
+           }
+
+        }
+
+        if (haveTestCase){
+            targetMethod=testCaseMethod;
+        }
+        if (targetMethod != null) {
+            for (Parameter parameter : targetMethod.getParameters()) {
+                stringBuilder.append(parameter.getType().getTypeName()).append(',');
+            }
+            if (stringBuilder.length()!=0) {
+                stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+            }
+            System.out.printf(format,targetMethod.getName(),stringBuilder);
+        }
+        return targetMethod;
+    }
+
+
+    private static String getMicrosecond(long START_TIME,long END_TIME) {
         StringBuilder stringBuilder=new StringBuilder();
         long millis=END_TIME - START_TIME;
         stringBuilder.append("方法用时：").append(millis).append("ms");
         if (millis<=1000){
-            stringBuilder= setColor(stringBuilder,"green");
+            setColor(stringBuilder, "green");
         }else{
-            stringBuilder=setColor(stringBuilder,"red");
+            setColor(stringBuilder, "red");
         }
         return stringBuilder.append("\n").toString();
     }
 
-   public static StringBuilder setColor(StringBuilder context,String color){
+   private static StringBuilder setColor(StringBuilder context,String color){
         //示例：31;22;9m  31->红色 22->正常颜色/强度 9->划除线
        switch (color){
             case "red":
