@@ -26,12 +26,7 @@ public class Question733 {
         dfs(image,x,y+1,newColor,oldColor);
     }
     public void TestCase(){
-        System.out.println(1);
     }
 
-    void test(){
 
-    }
-
-    protected void o(){}
 }

@@ -1,6 +1,4 @@
-import 学习计划.LeetCode75.Day9.Question733;
 import 数据结构模型.ListNode;
-import 每日一题.Question1;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,9 +9,6 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        RunQuestion(Question733.class);
-        RunQuestion(Question1.class,new int[]{1,23,41,1},1);
-
     }
 
     public static void RunQuestion(Class<?> clz, Object... args) {
@@ -26,6 +21,9 @@ public class Main {
             object = clz.getConstructor().newInstance();
             assert method != null:"没有找到目标方法！";
 
+            if (method.getName().equals("TestCase")) {
+               args=null;
+            }
             parameterResolver(method,args);
 
             START_TIME = System.currentTimeMillis();
