@@ -75,7 +75,19 @@ public class Main {
                 case "java.lang.String[]"->stringBuilder.append(Arrays.deepToString((String[]) obj));
                 case "java.lang.Object[]"->stringBuilder.append(Arrays.deepToString((Object[]) obj));
                 case "int[]"->stringBuilder.append(Arrays.toString((int[]) obj));
-                case "int[][]"->stringBuilder.append(Arrays.toString((int[][]) obj));
+                case "int[][]"->{
+                    int iMax = ((int[][])obj).length - 1;
+                    if (iMax == -1)
+                        return "[]";
+                    StringBuilder b = new StringBuilder();
+                    b.append('[');
+                    for (int i = 0; ; i++) {
+                        b.append(Arrays.toString(((int[][])obj)[i]));
+                        if (i == iMax)
+                            return b.append(']').toString();
+                        b.append(", ");
+                    }
+                }
                 case "数据结构模型.ListNode" -> stringBuilder.append(((ListNode) obj).toValueString());
                 default -> stringBuilder.append(obj);
             }
