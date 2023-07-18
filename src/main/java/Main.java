@@ -75,6 +75,7 @@ public class Main {
                 case "java.lang.String[]"->stringBuilder.append(Arrays.deepToString((String[]) obj));
                 case "java.lang.Object[]"->stringBuilder.append(Arrays.deepToString((Object[]) obj));
                 case "int[]"->stringBuilder.append(Arrays.toString((int[]) obj));
+                case "double[]"->stringBuilder.append(Arrays.toString((double[]) obj));
                 case "int[][]"->{
                     int iMax = ((int[][])obj).length - 1;
                     if (iMax == -1)
