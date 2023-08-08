@@ -8,13 +8,25 @@ package 每日一题;
  **/
 public class Question1281 {
     public int subtractProductAndSum(int n) {
-       String str=String.valueOf(n);
-       int ji=1,sum=0;
-        for (int i = 0; i < str.length(); i++) {
-            int num=str.charAt(i)-'0';
-            ji*=num;
-            sum+=num;
+        int sum=0,product=1;
+        while(n/10!=0||n%10!=0){
+            int i=n%10;
+            sum+=i;
+            product*=i;
+            n/=10;
         }
-        return ji-sum;
+        return product-sum;
     }
+
+//  字节数组处理
+//    public int subtractProductAndSum(int n) {
+//        String str=String.valueOf(n);
+//        int ji=1,sum=0;
+//        for (int i = 0; i < str.length(); i++) {
+//            int num=str.charAt(i)-'0';
+//            ji*=num;
+//            sum+=num;
+//        }
+//        return ji-sum;
+//    }
 }
