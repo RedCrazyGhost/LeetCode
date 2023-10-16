@@ -1,10 +1,27 @@
 package 每日一题;
 
-import java.util.*;
-
 public class Question260 {
 
+// 位运算
     public int[] singleNumber(int[] nums) {
+        int sum=0;
+        for(int num:nums){
+            sum^=num;
+        }
+        int i=(sum==Integer.MIN_VALUE?sum:sum&-(sum));
+        int num1=0,num2=0;
+        for(int num:nums){
+            if ((num&i)!=0){
+                num1^=num;
+            }else{
+                num2^=num;
+            }
+        }
+        return new int[]{num1,num2};
+    }
+
+//    常规Map计算
+//    public int[] singleNumber(int[] nums) {
 //        Map<Integer,Integer> map=new HashMap<>();
 //        List<Integer> list=new ArrayList<>();
 //        for(int i:nums){
@@ -20,10 +37,5 @@ public class Question260 {
 //            arr[i]=list.get(i);
 //        }
 //        return arr;
-
-
-//        位运算
-
-        return null;
-    }
+//    }
 }
