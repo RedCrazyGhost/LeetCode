@@ -1,4 +1,4 @@
-.idea
-target
+Java/.idea
+Java/target
 .gitignore
 LeetCode.iml
