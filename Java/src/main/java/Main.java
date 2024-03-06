@@ -1,4 +1,5 @@
-import 数据结构模型.ListNode;
+import model.ListNode;
+import daily.Question2103;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -9,7 +10,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(1);
+        RunQuestion(Question2103.class,"R0G0B0R0B0G0");
     }
     public static void RunQuestion(Class<?> clz, Object... args) {
         long START_TIME,END_TIME;
