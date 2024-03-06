@@ -1,6 +1,6 @@
 package learning.Offer.搜索与回溯算法;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 剑指 Offer 68 - II. 二叉树的最近公共祖先

@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 19. 删除链表的倒数第 N 个结点

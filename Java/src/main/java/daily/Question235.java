@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 235. 二叉搜索树的最近公共祖先

@@ -1,6 +1,6 @@
 package learning.Offer.双指针;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 剑指 Offer 18. 删除链表的节点

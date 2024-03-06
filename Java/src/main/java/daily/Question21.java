@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 21. 合并两个有序链表

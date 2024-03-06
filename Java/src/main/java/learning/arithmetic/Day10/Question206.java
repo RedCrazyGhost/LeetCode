@@ -1,6 +1,6 @@
 package learning.算法入门.Day10;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 206. 反转链表

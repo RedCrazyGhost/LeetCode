@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 1290. 二进制链表转整数

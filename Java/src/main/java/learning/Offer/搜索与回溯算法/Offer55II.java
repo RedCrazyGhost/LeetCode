@@ -1,6 +1,6 @@
 package learning.Offer.搜索与回溯算法;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 剑指 Offer 55 - II. 平衡二叉树

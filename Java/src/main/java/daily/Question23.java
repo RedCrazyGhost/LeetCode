@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 23. 合并 K 个升序链表

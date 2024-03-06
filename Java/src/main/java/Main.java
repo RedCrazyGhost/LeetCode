@@ -67,7 +67,7 @@ public class Main {
 //        final String ARRAY_OBJECT="[Ljava.lang.Object;";
 //        final String ARRAY_BOOLEAN="[Z";
 //        final String ARRAY_FLOAT="[F";
-//        final String LISTNODE="数据结构模型.ListNode";
+//        final String LISTNODE="model.ListNode";
 
 
         StringBuilder stringBuilder=new StringBuilder();
@@ -90,7 +90,7 @@ public class Main {
                         b.append(", ");
                     }
                 }
-                case "数据结构模型.ListNode" -> stringBuilder.append(((ListNode) obj).toValueString());
+                case "model.ListNode" -> stringBuilder.append(((ListNode) obj).toValueString());
                 default -> stringBuilder.append(obj);
             }
         }else{

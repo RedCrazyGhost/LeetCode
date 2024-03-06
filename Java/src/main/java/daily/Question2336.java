@@ -13,7 +13,7 @@ public class Question2336 {
     private int count;
     private TreeSet<Integer> set;
 
-    public SmallestInfiniteSet() {
+    public void SmallestInfiniteSet() {
         count=1;
         set=new TreeSet<>();
     }

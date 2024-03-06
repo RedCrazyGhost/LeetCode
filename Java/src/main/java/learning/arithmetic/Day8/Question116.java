@@ -1,6 +1,6 @@
 package learning.算法入门.Day8;
 
-import 数据结构模型.ThreeTreeNode;
+import model.ThreeTreeNode;
 
 
 /**

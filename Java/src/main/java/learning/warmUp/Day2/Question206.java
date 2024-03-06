@@ -1,6 +1,6 @@
 package learning.备战热身.Day2;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 
 /**

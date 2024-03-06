@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 public class Question237 {
     public void deleteNode(ListNode node) {

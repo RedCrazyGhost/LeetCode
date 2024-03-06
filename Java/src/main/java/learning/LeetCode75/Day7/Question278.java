@@ -1,6 +1,6 @@
 package learning.LeetCode75.Day7;
 
-import 数据结构模型.VersionControl;
+import model.VersionControl;
 
 /**
  * 278. 第一个错误的版本

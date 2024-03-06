@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.Trie;
+import model.Trie;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -1,6 +1,6 @@
 package learning.LeetCode75.Day8;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 98. 验证二叉搜索树

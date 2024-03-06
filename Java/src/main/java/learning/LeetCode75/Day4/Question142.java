@@ -1,6 +1,6 @@
 package learning.LeetCode75.Day4;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 142. 环形链表 II

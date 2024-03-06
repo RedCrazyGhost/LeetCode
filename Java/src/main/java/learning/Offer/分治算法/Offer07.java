@@ -1,6 +1,6 @@
 package learning.Offer.分治算法;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package learning.数据结构基础.Day15;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 import java.util.*;
 

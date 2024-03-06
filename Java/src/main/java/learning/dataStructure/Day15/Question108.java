@@ -1,6 +1,6 @@
 package learning.数据结构基础.Day15;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 108. 将有序数组转换为二叉搜索树

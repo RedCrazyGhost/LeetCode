@@ -1,6 +1,6 @@
 package learning.Offer.链表;
 
-import 数据结构模型.RandomListNode;
+import model.RandomListNode;
 
 /**
  * 剑指 Offer 35. 复杂链表的复制

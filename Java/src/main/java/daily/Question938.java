@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 938. 二叉搜索树的范围和

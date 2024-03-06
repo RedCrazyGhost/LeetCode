@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.FourTreeNode;
+import model.FourTreeNode;
 
 /**
  * 427. 建立四叉树

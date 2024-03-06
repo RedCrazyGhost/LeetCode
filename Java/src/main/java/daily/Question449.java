@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 import java.lang.reflect.Parameter;
 import java.util.ArrayDeque;

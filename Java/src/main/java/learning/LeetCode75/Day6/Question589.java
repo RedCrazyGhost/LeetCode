@@ -1,6 +1,6 @@
 package learning.LeetCode75.Day6;
 
-import 数据结构模型.NTreeNode;
+import model.NTreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package learning.Offer.链表;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 剑指 Offer 24. 反转链表

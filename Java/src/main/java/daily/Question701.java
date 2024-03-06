@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 701. 二叉搜索树中的插入操作

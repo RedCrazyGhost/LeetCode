@@ -1,6 +1,6 @@
 package daily;
 
-import 数据结构模型.NTreeNode;
+import model.NTreeNode;
 
 /**
  * 559. N 叉树的最大深度

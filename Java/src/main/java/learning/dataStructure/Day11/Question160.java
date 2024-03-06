@@ -1,6 +1,6 @@
 package learning.数据结构基础.Day11;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

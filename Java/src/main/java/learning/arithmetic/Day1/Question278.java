@@ -1,6 +1,6 @@
 package learning.算法入门.Day1;
 
-import 数据结构模型.VersionControl;
+import model.VersionControl;
 
 /**
  * 278. 第一个错误的版本

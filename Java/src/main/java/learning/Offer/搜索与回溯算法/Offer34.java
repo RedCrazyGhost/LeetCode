@@ -1,6 +1,6 @@
 package learning.Offer.搜索与回溯算法;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

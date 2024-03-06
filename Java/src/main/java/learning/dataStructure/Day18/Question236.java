@@ -1,6 +1,6 @@
 package learning.数据结构基础.Day18;
 
-import 数据结构模型.TreeNode;
+import model.TreeNode;
 
 /**
  * 236. 二叉树的最近公共祖先

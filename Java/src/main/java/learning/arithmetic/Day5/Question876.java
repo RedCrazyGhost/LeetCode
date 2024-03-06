@@ -1,6 +1,6 @@
 package learning.算法入门.Day5;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 876. 链表的中间结点

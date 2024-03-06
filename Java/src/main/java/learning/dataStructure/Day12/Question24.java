@@ -1,6 +1,6 @@
 package learning.数据结构基础.Day12;
 
-import 数据结构模型.ListNode;
+import model.ListNode;
 
 /**
  * 24. 两两交换链表中的节点
